@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <title>Entrega 3 JS</title>
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <div class="title">LISTA DE PRODUCTOS</div>
+            <div class="icon-cart">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                  </svg>
+                  <span>0</span>
+            </div>
+        </header>
+
+        <div class="listProduct">
+        </div>
+    </div>
+
+    <div class="cartTab">
+        <h1>Carrito</h1>
+        <div class="listCart">
+        </div>
+        <div class="btn">
+            <button class="close">Cerrar</button>
+            <button class="checkOut">Comprar</button>
+        </div>
+    </div>
+    
+    <div id="modal-overlay" class="hidden"></div>
+    <form id="form-checkout" class="hidden">
+        <h2 class="modal-title">Pagar con MercadoPago</h2>
+        <div id="form-checkout__cardNumber"></div>
+        <div id="form-checkout__expirationDate"></div>
+        <div id="form-checkout__securityCode"></div>
+        <input type="text" id="form-checkout__cardholderName" />
+        <select id="form-checkout__issuer"></select>
+        <select id="form-checkout__installments"></select>
+        <select id="form-checkout__identificationType"></select>
+        <input type="text" id="form-checkout__identificationNumber" />
+        <input type="email" id="form-checkout__cardholderEmail" />
+    
+        <button type="submit" id="form-checkout__submit">Pagar</button>
+        <progress value="0" class="progress-bar">Cargando...</progress>
+    </form>
+         
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+        <script>
+    const mp = new MercadoPago("TEST-e6d81916-d4c1-4f54-a70f-ae30841d62a4");
+    </script>
+</body>
+</html>
